@@ -1,5 +1,5 @@
 //nameCheck
-
+/*
 function checkSubmit(){
 	if(window.confirm('Are you OK?')){
 		return true;
@@ -9,7 +9,7 @@ function checkSubmit(){
 		return false;
 	}
 }
-
+*/
 
 //audioPlay
 function audioPlay(){
