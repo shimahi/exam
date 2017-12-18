@@ -4,49 +4,45 @@ function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
+require_once('audio_energy.php');
 
-$tableName = $_POST['userName']; //tableNamedBySubject
-$bar = $_POST['bar'];	//barIsValueSubjectReplied
-$number = $_POST['number'];		//numberOfAudio
-$numberForSql = "audio".$number;//numberOfAudioForMysql
-$number += 1;		//processingTheAudio
-$audio = "audio".$number;
-$title= "examination";
+
+$tableName = $_POST['userName'];
+$first = $_POST['first'];
+$bar = $_POST['bar'];
+$random = range( 0, 40 );
+$count = $_POST['count'];
+$first +=1;
+$count +=1;
+$title = "end";
+
+if($first >1){
+  $k = $audiodata[$random[$count - 2]];
+}else{
+  $k = $audiodata[$random[$count - 1]];
+}
 
 $dbHost = "127.0.0.1"; 
 $dbUser = "root";
 $dbPass = "password";
-$dbName = "examination";
-$sql = "CREATE TABLE $tableName (audio varchar(20) , value INT(3))"; //createTable
-$query = "insert into $tableName (audio, value) values ('$numberForSql', $bar)";
+$dbName = "exam_energy";
+$sql = "CREATE TABLE $tableName (audio varchar(60) , value INT(10))"; 
+$query = "insert into $tableName (audio, value) values ('$k', $bar)";
 $conn = new mysqli($dbHost, $dbUser, $dbPass,$dbName);
 
-//createTableOnlyFirstPost
-if($number == 1){
-if($conn->connect_error){
-	die($conn->connect_error);
-}
-if($conn->query($sql)===TRUE){
-	// echo "table created";
-}else{
-	// echo "table failed";
-}
-$conn->close();
-}
+
 
 //insertTheValueIntoDataBase
-if($number > 1){
+if($first > 1){
 if($conn->connect_error){
-	die($conn->connect_error);
+  die($conn->connect_error);
 }
 if($conn->query($query)===TRUE){
-	// echo "inserted";
 }else{
-	// echo "insert failed";
+  echo "insert failed";
 }
 $conn->close();
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -60,11 +56,12 @@ $conn->close();
 
   <title><?=h($title)?></title>
 </head>
+
 <body >
 <div class="endOfExam" style="font-size: 24px; color:#888; font-family:Arial, sans-serif; text-align: center">
-	It's Over
+	It's done
   <br>
-  	Thx.
+  	Thank you
  </div>
 
 </body>
