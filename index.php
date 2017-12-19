@@ -17,10 +17,8 @@ $t = date( "YmdHis", $timestamp);
   <title>Start</title>
 </head>
 <body>
-  <form action="exam.php" method="post"  autocomplete="off">
+  <form action="renshu.php" method="post"  autocomplete="off">
   	<input class="username"  type="text" value="Name" onfocus="if(this.value==this.defaultValue){this.value=''}" onblur="if(this.value==''){this.value=this.defaultValue}" name="userName" required>
-  	<input type="hidden" name="bar" value=0>
-    <input type="hidden" name="k" value=0>
     <input type="hidden" name="count" value=0>
   	<input type="submit" class="start_button" value="start">
   </form>

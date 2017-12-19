@@ -47,10 +47,8 @@ $conn->close();
 </head>
 
 <body>
-  <div class="endOfExam" style="font-size: 24px; color:#888; font-family:Arial, sans-serif; text-align: center">
-    It's done
-    <br>
-    Thank you
+  <div class="endOfExam" style="font-size: 20px; color:#888; font-family:Arial, sans-serif; text-align: center">
+    実験は終了です。お疲れ様でした。
  </div>
 </body>
 </html>
