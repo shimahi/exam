@@ -21,7 +21,7 @@ $tableName = $_POST['userName'];
 <body>
 <div class="endOfExam" style="font-size: 16px; color:#888; font-family:Arial, sans-serif; text-align: center">
 これから本試行を始めます。<br>
-<ul style="text-align:left; padding-left: 400px; margin: 4px" >
+<ul style="text-align:left; padding-left: 390px; margin: 4px" >
 <li>呈示された旋律の「速さ」について、あなたが感じた数をテキストエリアに入力してください。</li>
 <li>必ず正の数を入力してください。</li>
 <li>「 ▷ 」ボタンを押せば、何度でも呈示音を聞くことができます。</li>

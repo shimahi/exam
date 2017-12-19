@@ -62,56 +62,70 @@ margin-left:5px;
   font-size:19px;
   color:#fff;
   background-color: #1e94fb;
-  margin-top:50px;
   vertical-align: 200px;
   width: 70px;
   height:38px;
   outline:none;
   border-radius: 7px;
+  padding: 8px 11px;
+  box-shadow: 0px 0px 0px 0px rgba(3,95,175, 0);
+  color: #ffffff;
 }
 
 .submit_button:hover{
   font-size:19px;
   color:#fff;
-  margin-top:46px;
-  background-color: #1e94fb;
+  margin-top:-4px;
+  background-color: #2d9bfb;
   top:-4px;
   height:42px;
   outline:none;
   border-bottom: 4px solid rgba(3,95,175, 1);
+  transition: all 33ms;
+  -moz-transition: all 33ms;
+  -webkit-transition: all 33ms;
+  -o-transition: all 33ms;
+  outline:;
 }
 
 .submit_button:hover:before{
-
   transition: all 33ms;
   -moz-transition: all 33ms;
   -webkit-transition: all 33ms;
   -o-transition: all 33ms;
+    border-bottom: 4px solid rgba(3,95,175, 1);
+    outline: none;
 }
 
-.submit_button:hover .button-content2  {
+.submit_button:hover .button-content  {
   box-shadow: 0px 4px 0px 0px rgba(3,95,175, 1);
-
   transition: all 33ms;
   -moz-transition: all 33ms;
   -webkit-transition: all 33ms;
   -o-transition: all 33ms;
+  outline: none;
 }
 
 .submit_button:active {
-  margin-top:50px;
+  margin-top:0px;
   height: 38px;
   font-size:19px;
   box-shadow: 0px 1.8px 0px 0px rgba(2,81,150, 2) inset;
-  border-bottom:none;
   outline:none;
 }
 
-.submit_button:active:hover {
-  top:-4px;
-  padding-bottom: -4px;
-    border-bottom:  4px solid rgba(3,95,175, 0);
+.submit_button:active:before  {
+  top: -4px;
+  padding-bottom: 4px;
+  border-bottom: 0px solid rgba(3,95,175, 0);
 }
+
+.submit_button:active  {
+  box-shadow: 0px 0px 0px 0px rgba(3,95,175, 0);
+  outline: none;
+
+}
+
 
 .username{
 position:relative;
@@ -168,4 +182,5 @@ outline: none;
   border-bottom:none;
   outline:none;
 }
+
 

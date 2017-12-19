@@ -10,7 +10,7 @@ require_once('audio_energy.php');
 $tableName 新規作成するDBのテーブル名、値は被験者の氏名
 $k         フォームを送った時点での音声ファイルの名前、DBにaudioとして格納される
 $bar  	   被験者が入力する数値、DBにvalueとして格納される
-$count     ページングの回数を記録、audio_energy.phpの配列番号に使う、40に達するとend.phpに移動する
+$count     ページングの回数を記録、audio_energy.phpの配列番号に使う、80に達するとend.phpに移動する
 $number    $kの参照に使う
 $random    audio_energy.phpの順番を決める。$countで管理する
 */
@@ -104,6 +104,7 @@ $number++;
 	?>
 
 	<div class="mojinoiro">
+	
 		<form action="<?php echo $link ?>" method="post" autocomplete="off">
 		<output id="output1"></output>
 		<br>
