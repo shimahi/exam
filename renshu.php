@@ -7,7 +7,7 @@ function h($str)
 require_once('audio_energy.php');
 
 
-$random = [24,17,22,23,28,5,3,35,12,31,33,27,39,8,26,7,14,1,0,25,38,37,4,18,16,29,15,34,13,11,30,36,2,32,6,21,20,9,10,19];
+$random = [49,21,8,9,46,7,3,27,34,43,38,69,2,51,23,36,25,56,29,30,17,26,48,12,61,18,63,11,64,28,1,47,10,58,15,67,52,65,32,0,14,57,50,13,55,16,42,37,53,62,4,66,60,6,41,22,54,24,20,39,19,59,40,45,33,5,31,35,68,44];
 
 $tableName = $_POST['userName']; 
 $count = $_POST['count'];
@@ -42,9 +42,9 @@ $count +=1;
 
 	<?php 
 	$link = "";
-	if($count < 16){
+	if($count < 14){
 		$link = "renshu.php";
-	}elseif($count == 16){
+	}elseif($count == 14){
 		$link = "ready.php";
 	}
 	?>
@@ -61,6 +61,7 @@ $count +=1;
   		<input class="submit_button" type="submit" value="next" >
 		</form>
 	</div>
+	<div class="count"><?php echo $count; ?>/14</div>
   </div>
 </body>
 </html>

@@ -5,6 +5,9 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 require_once('audio_energy.php');
+date_default_timezone_set('Asia/Tokyo');
+$timestamp = time();
+$t = date( "YmdHis", $timestamp);
 
 $tableName = $_POST['userName']; 
 $bar = $_POST['bar']; 
@@ -21,7 +24,7 @@ $dbHost = "127.0.0.1";
 $dbUser = "root";
 $dbPass = "password";
 $dbName = "exam_energy";
-$query = "insert into $tableName (audio, value) values ('$k', $bar)";
+$query = "insert into $tableName (audio, value, post_time) values ('$k', $bar, $t)";
 $conn = new mysqli($dbHost, $dbUser, $dbPass,$dbName);
 
 if($conn->connect_error){

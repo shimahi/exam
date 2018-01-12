@@ -48,6 +48,13 @@ input:focus:valid{
 
 }
 
+.count{
+  position:relative;
+  right: 600px;
+color: #6A6A6A;
+font-size: 20px;
+
+}
 
 .mojinoiro{
   color: #6A6A6A;

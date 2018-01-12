@@ -5,6 +5,9 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 require_once('audio_energy.php');
+date_default_timezone_set('Asia/Tokyo');
+$timestamp = time();
+$t = date( "YmdHis", $timestamp);
 
 /*
 $tableName 新規作成するDBのテーブル名、値は被験者の氏名
@@ -15,7 +18,7 @@ $number    $kの参照に使う
 $random    audio_energy.phpの順番を決める。$countで管理する
 */
 
-$random = [14,73,35,9,34,16,18,59,66,27,58,40,70,8,72,55,1,71,68,22,50,41,31,38,65,56,24,76,20,78,0,43,79,12,7,17,4,36,62,30,69,64,23,49,77,29,48,42,57,39,5,28,6,60,51,15,74,10,61,53,21,75,46,44,47,3,52,26,67,11,13,32,2,54,45,33,25,37,19,63];
+$random = [10,1,40,57,49,58,34,48,6,43,25,39,22,33,67,7,62,12,31,27,26,35,54,44,36,59,51,14,55,8,11,13,5,46,19,38,3,60,16,52,9,17,53,28,65,37,47,45,30,69,56,61,41,64,15,68,66,32,18,20,24,2,0,21,42,23,50,4,29,63];
 
 $tableName = $_POST['userName']; 
 $k = $_POST['k'];
@@ -34,8 +37,8 @@ $dbHost = "127.0.0.1";
 $dbUser = "root";
 $dbPass = "password";
 $dbName = "exam_energy";
-$sql = "CREATE TABLE $tableName (audio varchar(60) , value INT(10))"; //createTable
-$query = "insert into $tableName (audio, value) values ('$k', $bar)";
+$sql = "CREATE TABLE $tableName (audio varchar(60) , value INT(10), post_time varchar(20))"; //createTable
+$query = "insert into $tableName (audio, value, post_time) values ('$k', $bar, $t)";
 $conn = new mysqli($dbHost, $dbUser, $dbPass,$dbName);
 
 //create table
@@ -96,15 +99,15 @@ $number++;
 
 	<?php 
 	$link = "";
-	if($count < 80){
+	if($count < 70){
 		$link = "exam.php";
-	}elseif($count == 80){
+	}elseif($count == 70){
 		$link = "end.php";
 	}
 	?>
 
 	<div class="mojinoiro">
-	
+
 		<form action="<?php echo $link ?>" method="post" autocomplete="off">
 		<output id="output1"></output>
 		<br>
@@ -116,9 +119,11 @@ $number++;
 			<input type="number" name="bar" class="custom" pattern="\d*"/ step="0.000000000001" value="" required>
 		</label>
 		<br>
+
   		<input class="submit_button" type="submit" value="next" >
 		</form>
 	</div>
+	<div class="count"><?php echo $count; ?>/70</div>
   </div>
 </body>
 </html>
